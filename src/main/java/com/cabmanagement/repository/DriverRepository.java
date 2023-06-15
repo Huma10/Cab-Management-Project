@@ -8,4 +8,5 @@ import com.cabmanagement.entites.Driver;
 @Repository
 public interface DriverRepository extends JpaRepository<Driver, Long> {
 
+	Driver findByEmail(String email);
 }
