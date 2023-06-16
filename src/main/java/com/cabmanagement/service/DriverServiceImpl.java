@@ -63,4 +63,11 @@ public class DriverServiceImpl implements DriverService {
 		return driverRepository.findByEmail(email);
 	}
 
+	@Override
+	public String generateDriverId() {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+
 }

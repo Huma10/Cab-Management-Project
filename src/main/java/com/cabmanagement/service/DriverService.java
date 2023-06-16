@@ -19,4 +19,6 @@ public interface DriverService {
 	public List<Driver> getAllDriver();
 	
 	public Driver findByEmail(String email);
+	
+	public String generateDriverId();
 }
