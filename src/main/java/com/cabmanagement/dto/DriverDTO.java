@@ -8,12 +8,12 @@ import lombok.Setter;
 public class DriverDTO {
 	
 	private Long id;
-
+	
 	private String driverName;
 	
-	private String driverIdNumber;
+	private String driverIdNumber;	
 	
-	private String email;
+	private String email;	
 	
 	private String phoneNo;
 }

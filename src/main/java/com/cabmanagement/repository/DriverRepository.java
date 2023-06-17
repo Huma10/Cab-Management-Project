@@ -11,6 +11,6 @@ public interface DriverRepository extends JpaRepository<Driver, Long> {
 
 	Driver findByEmail(String email);
 	
-	@Query(value = "SELECT driver_id_number FROM Driver order by id desc", nativeQuery = true)
+	@Query(value = "SELECT driver_id_number FROM Driver order by id desc LIMIT 1", nativeQuery = true)
 	String generateDriverIdNumber();
 }

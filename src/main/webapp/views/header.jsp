@@ -14,7 +14,7 @@
 <title>Home Page</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger text-white fw-bold">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Cab Management System</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<c:url value="/driver/add"/>">Add Driver</a>
+          <a class="nav-link active" href="<c:url value="/add"/>">Add Driver</a>
         </li>
       </ul>
     </div>

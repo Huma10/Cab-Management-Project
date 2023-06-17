@@ -11,6 +11,16 @@
 	<h1 class="text-center fw-bold">Driver Page</h1>
 	<sf:form method="post" action="/add" modelAttribute="driver">
 	<div class="container">
+	<c:if test="${success!=null}">
+		<div class="alert alert-primary fw-bold text-dark" role="alert">
+  				${success}
+		</div>
+	</c:if>
+	<c:if test="${error!=null}">
+		<div class="alert alert-danger fw-bold text-dark" role="alert">
+  				${error}
+		</div>
+	</c:if>
 		<table class="table table-striped table-bordered">
 			<tr>
 				<td><label class="form-label fw-bold">Driver Name</label></td>
@@ -43,6 +53,12 @@
 									<font color="red" style="font-size: 13px"><sf:errors
 											path="${status.expression}" /></font>
 					</s:bind>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" value="Add Driver" class="btn btn-warning fw-bold text-dark">
 				</td>
 			</tr>
 		</table>
