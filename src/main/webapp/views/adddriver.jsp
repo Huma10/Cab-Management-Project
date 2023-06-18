@@ -10,6 +10,8 @@
 	<%@include file="header.jsp"%>
 	<h1 class="text-center fw-bold">Driver Page</h1>
 	<sf:form method="post" action="/add" modelAttribute="driver">
+	<sf:hidden path="id"/>
+	<sf:hidden path="driverIdNumber"/>
 	<div class="container">
 	<c:if test="${success!=null}">
 		<div class="alert alert-primary fw-bold text-dark" role="alert">
@@ -58,7 +60,12 @@
 			<tr>
 				<td></td>
 				<td>
+				<c:if test="${driver.getId()!=null }">
+				<input type="submit" value="Update Driver" class="btn btn-warning fw-bold text-dark">
+				</c:if>
+				<c:if test="${driver.getId()==null }">
 					<input type="submit" value="Add Driver" class="btn btn-warning fw-bold text-dark">
+				</c:if>
 				</td>
 			</tr>
 		</table>

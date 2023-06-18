@@ -1,10 +1,16 @@
 package com.cabmanagement.exception;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public class RecordNotFoundException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String msg;
+
+	public RecordNotFoundException(String msg) {
+		super(msg);
+	}
+	
 	
 }

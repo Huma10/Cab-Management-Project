@@ -43,6 +43,7 @@ public class DriverServiceImpl implements DriverService {
 	public void update(Driver driver, Long id) throws RecordNotFoundException {
 		log.info("update method of DriverServiceImpl started");
 		Optional<Driver> driverExist = driverRepository.findById(id);
+		System.out.println(driver.getDriverIdNumber());
 		if(!driverExist.isPresent()) {
 			throw new RecordNotFoundException("Driver does not exists");	
 		} else {
