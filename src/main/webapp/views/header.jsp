@@ -28,6 +28,12 @@
         <li class="nav-item">
           <a class="nav-link active" href="<c:url value="/add"/>">Add Driver</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/cabs">Cab List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="<c:url value="/cab"/>">Add Cab</a>
+        </li>
       </ul>
     </div>
   </div>
