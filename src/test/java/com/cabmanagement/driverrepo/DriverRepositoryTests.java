@@ -23,7 +23,7 @@ public class DriverRepositoryTests {
 	
 	@Test
 	public void saveDriver() {
-		// used the builder pattern to create an object of Driver Entity
+		// create an object of Driver Entity
 		Driver driver = new Driver();
 		driver.setDriverName("abc");
 		driver.setEmail("abc@gmail.com");
