@@ -21,4 +21,6 @@ public interface DriverService {
 	public Driver findByEmail(String email);
 	
 	public String generateDriverId();
+
+	public void assignCabToDriver(Long driverId, Long cabId);
 }

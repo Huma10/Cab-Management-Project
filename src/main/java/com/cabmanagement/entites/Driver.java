@@ -15,6 +15,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -41,6 +42,9 @@ public class Driver {
 	
 	@Column(name = "phone_no", length = 255)
 	private String phoneNo;
+	
+	@Transient
+	private Long cabId;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(name = "driver_cabs", joinColumns = {@JoinColumn(name="driver_id")}, inverseJoinColumns = {@JoinColumn(name="cab_id")})

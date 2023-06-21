@@ -34,6 +34,12 @@
         <li class="nav-item">
           <a class="nav-link active" href="<c:url value="/cab"/>">Add Cab</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="<c:url value="/driverlist"/>">Driver</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="<c:url value="/cab"/>">Cab</a>
+        </li>
       </ul>
     </div>
   </div>

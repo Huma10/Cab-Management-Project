@@ -6,9 +6,11 @@ import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
 
+import com.cabmanagement.entites.Cab;
 import com.cabmanagement.entites.Driver;
 import com.cabmanagement.exception.DuplicateRecordException;
 import com.cabmanagement.exception.RecordNotFoundException;
+import com.cabmanagement.repository.CabRepository;
 import com.cabmanagement.repository.DriverRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -18,6 +20,8 @@ import lombok.RequiredArgsConstructor;
 public class DriverServiceImpl implements DriverService {
 	
 	private final DriverRepository driverRepository;
+	
+	private final CabRepository cabRepository;
 	
 	private Logger log = Logger.getLogger(DriverServiceImpl.class.getName());
 
@@ -88,6 +92,22 @@ public class DriverServiceImpl implements DriverService {
 		int driverIdNumber = Integer.parseInt(driverRepository.generateDriverIdNumber().substring(5)) + 1;
 		log.info("generateDriverId method of DriverServiceImpl ended");
 		return String.valueOf(driverIdNumber);
+		
+	}
+
+	@Override
+	public void assignCabToDriver(Long driverId, Long cabId) {
+		List<Cab> cabs = null;
+		Driver driver = driverRepository.findById(driverId).get();
+		Cab cab = cabRepository.findById(cabId).get();		
+		cabs = driver.getCabs();
+		
+		cabs.add(cab);
+		
+		driver.setCabs(cabs);
+		
+		driverRepository.save(driver);
+		
 		
 	}
 
