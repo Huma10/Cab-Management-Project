@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%@include file="header.jsp"%>
-	<h1 class="text-center fw-bold">Driver</h1>
+	<h1 class="text-center fw-bold">Cab List</h1>
 	<sf:form method="post" action="/add" modelAttribute="driver">
 	<div class="container">
 	<c:if test="${success!=null}">
@@ -25,25 +25,22 @@
 		<thead>
 			<tr>
 				<th>Sr No.</th>
-				<th>Driver Id Number</th>
-				<th>Driver Name</th>
-				<th>Driver Email</th>
-				<th>Phone No</th>
+				<th>Cab Registration Number</th>
+				<th>Cab Model</th>
+				<th>Cab Colour</th>
 				<th>Action</th>
 			</tr>
 		</thead>	
 			<tbody>
-					<c:forEach items="${list}" var="d" varStatus="idx">
+					<c:forEach items="${list}" var="c" varStatus="idx">
 					<tr>
 						<td>${idx.index + 1}</td>
-						<td>${d.driverIdNumber}</td>
-						<td>${d.driverName}</td>
-						<td>${d.email}</td>
-						<td>${d.phoneNo}</td>
+						<td>${c.cabRegistrationNumber}</td>
+						<td>${c.cabModel}</td>
+						<td>${c.cabColour}</td>
 						<td>
-							<a href="/driver?id=${d.id}" class="btn btn-warning fw-bold text-dark">Update</a>
-							<a href="/list?id=${d.id}" class="btn btn-danger fw-bold text-dark">Delete</a>
-							<a href="/viewcabslist?id=${d.id}" class="btn btn-secondary fw-bold text-dark">View Cabs</a>
+							<a href="/cab?id=${c.id}" class="btn btn-warning fw-bold text-dark">Update</a>
+							<a href="/cabs?id=${c.id}" class="btn btn-danger fw-bold text-dark">Delete</a>
 						</td>
 						</tr>
 					</c:forEach>

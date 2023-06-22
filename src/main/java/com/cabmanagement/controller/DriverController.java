@@ -116,7 +116,19 @@ public class DriverController {
 		return "driver";
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = { "/", "/driver" })
+	@RequestMapping(value = "/viewcabslist", method = {RequestMethod.GET, RequestMethod.POST})
+	public String showCabsForDriver(@ModelAttribute("driver") DriverDTO driver, Model model) {
+		if(driver.getId()!=null) {
+			Driver driverData = driverService.findById(driver.getId());
+			List<Cab> cabs = driverData.getCabs();
+			System.out.println(cabs.size()+" driver-data "+driverData.getCabs()+" id "+driver.getId());
+			model.addAttribute("list", cabs);
+			return "viewcabs";
+		}
+		return "viewcabs";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = { "/driver" })
 	public String assignCab(@ModelAttribute("driver") DriverDTO driver,@RequestParam(required = false) Long id) {
 		log.info("assignCab method of DriverController started");
 		if(driver.getId()!=null) {
