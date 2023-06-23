@@ -131,15 +131,17 @@ public class DriverController {
 	@RequestMapping(method = RequestMethod.GET, value = { "/driver" })
 	public String assignCab(@ModelAttribute("driver") DriverDTO driver,@RequestParam(required = false) Long id) {
 		log.info("assignCab method of DriverController started");
+		Driver dtoToEntity = DriverMapper.DTOToEntity(driver);
 		if(driver.getId()!=null) {
 			Driver driverData = driverService.findById(id);
-			System.out.println("in >> "+driverData.getDriverIdNumber());
+			System.out.println("in >> "+driverData.getDriverIdNumber()+"cabs "+driverData.getCabs()+" cab id:"+driver.getCabId());
 			driver.setId(driverData.getId());
 			driver.setDriverIdNumber(driverData.getDriverIdNumber());
 			driver.setDriverName(driverData.getDriverName());
 			driver.setPhoneNo(driverData.getPhoneNo());
 			driver.setEmail(driverData.getEmail());
 			driver.setCabId(driverData.getCabId());
+			driver.setCab(driverData.getCab());
 			return "assigncab";
 		}
 		log.info("assignCab method of DriverController ended");

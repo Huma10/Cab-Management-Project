@@ -46,6 +46,9 @@ public class Driver {
 	@Transient
 	private Long cabId;
 	
+	@Transient
+	private Cab cab;
+	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(name = "driver_cabs", joinColumns = {@JoinColumn(name="driver_id")}, inverseJoinColumns = {@JoinColumn(name="cab_id")})
 	private List<Cab> cabs = new ArrayList<>();

@@ -2,6 +2,8 @@ package com.cabmanagement.dto;
 
 import java.util.List;
 
+import com.cabmanagement.entites.Cab;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,4 +22,6 @@ public class DriverDTO {
 	private String phoneNo;
 	
 	private Long cabId;
+	
+	private Cab cab;
 }
