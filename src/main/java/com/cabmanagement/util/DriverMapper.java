@@ -30,7 +30,6 @@ public class DriverMapper {
 		driver.setDriverName(driverDTO.getDriverName());
 		driver.setEmail(driverDTO.getEmail());
 		driver.setPhoneNo(driverDTO.getPhoneNo());
-		driver.setCabId(driverDTO.getCabId());
 		return driver;
 	}
 }

@@ -17,4 +17,6 @@ public interface CabService {
 	public void deleteCab(Long id);
 	
 	public List<Cab> getAllCab();
+
+	void assignDriversToCab(Long driverId, Long cabId);
 }

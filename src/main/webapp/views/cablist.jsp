@@ -10,7 +10,8 @@
 	<%@include file="header.jsp"%>
 	<h1 class="text-center fw-bold">Cab List</h1>
 	<sf:form method="post" action="/cab" modelAttribute="cab">
-	<div class="container">
+	<div class="container text-center">
+	<a class="text-center btn btn-outline-danger mt-4 mb-3" href="<c:url value="/cab"/>">Add Cab</a>
 	<c:if test="${success!=null}">
 		<div class="alert alert-primary fw-bold text-dark" role="alert">
   				${success}

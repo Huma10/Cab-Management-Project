@@ -8,10 +8,9 @@
 </head>
 <body>
 	<%@include file="header.jsp"%>
-	<h1 class="text-center fw-bold">Driver Page</h1>
-	<sf:form method="post" action="/driver/assigncab" modelAttribute="driver">
+	<h1 class="text-center fw-bold">Cab Page</h1>
+	<sf:form method="post" action="/driver/assigncab" modelAttribute="cab">
 	<sf:hidden path="id"/>
-	<sf:hidden path="driverIdNumber"/>
 	<div class="container">
 	<c:if test="${success!=null}">
 		<div class="alert alert-primary fw-bold text-dark" role="alert">
@@ -25,57 +24,59 @@
 	</c:if>
 		<table class="table table-striped table-bordered">
 			<tr>
-				<td><label class="form-label fw-bold">Driver Name</label></td>
+				<td><label class="form-label fw-bold">Cab Registration Number</label></td>
 				<td>
-					<s:bind path="driverName">
+					<s:bind path="cabRegistrationNumber">
 									<sf:input path="${status.expression}"
-										placeholder="Enter Driver Name" class="form-control" />
+										placeholder="Enter Cab Registration Number" class="form-control" />
 									<font color="red" style="font-size: 13px"><sf:errors
 											path="${status.expression}" /></font>
 					</s:bind>
 				</td>
 			</tr>
 			<tr>
-				<td><label class="form-label fw-bold">Email</label></td>
+				<td><label class="form-label fw-bold">Cab Model</label></td>
 				<td>
-					<s:bind path="email">
+					<s:bind path="cabModel">
 									<sf:input path="${status.expression}"
-										placeholder="Enter Email" class="form-control" />
+										placeholder="Enter Cab Model" class="form-control" />
 									<font color="red" style="font-size: 13px"><sf:errors
 											path="${status.expression}" /></font>
 					</s:bind>
 				</td>
 			</tr>
 			<tr>
-				<td><label class="form-label fw-bold">Phone Number</label></td>
+				<td><label class="form-label fw-bold">Cab Colour</label></td>
 				<td>
-					<s:bind path="phoneNo">
+					<s:bind path="cabColour">
 									<sf:input path="${status.expression}"
-										placeholder="Enter Phone Number" class="form-control" />
+										placeholder="Enter Cab Colour" class="form-control" />
 									<font color="red" style="font-size: 13px"><sf:errors
 											path="${status.expression}" /></font>
 					</s:bind>
 				</td>
 			</tr>
+			
 			<tr>
-				<td><label class="form-label fw-bold">Assign Cab</label></td>
+				<td><label class="form-label fw-bold">Assign Drivers</label></td>
 				<td>
-				<s:bind path="cabId">
-					<sf:select path="${status.expression}" class="form-select">
-						<sf:option value="-1" label="----Select----"></sf:option>
-						<sf:options itemLabel="cabModel" itemValue="id" items="${cabList}"></sf:options>
-					</sf:select>
-				</s:bind>
+					<s:bind path="driverId">
+									<sf:select class="form-control" path="${status.expression}">
+								<sf:option value="-1" label="---Select---" />
+								<sf:options itemLabel="driverName" itemValue="id"
+									items="${driverList}" />
+							</sf:select>
+									<font color="red" style="font-size: 13px"><sf:errors
+											path="${status.expression}" /></font>
+					</s:bind>
 				</td>
 			</tr>
+			
 			<tr>
 				<td></td>
 				<td>
-				<c:if test="${driver.getId()!=null }">
-				<input type="submit" value="Update Driver" class="btn btn-warning fw-bold text-dark">
-				</c:if>
 				<c:if test="${driver.getId()==null }">
-					<input type="submit" value="Add Driver" class="btn btn-warning fw-bold text-dark">
+					<input type="submit" value="Assign Driver" class="btn btn-warning fw-bold text-dark">
 				</c:if>
 				</td>
 			</tr>

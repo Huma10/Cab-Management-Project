@@ -14,4 +14,8 @@ public class CabDTO {
 	private String cabModel;
 	
 	private String cabColour;
+	
+	private DriverDTO driver;
+	
+	private Long driverId;
 }

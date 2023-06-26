@@ -16,29 +16,20 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger text-white fw-bold">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Cab Management System</a>
+    <a class="navbar-brand" href="/list">Cab Management System</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/list">Driver List</a>
+          <a class="nav-link active" aria-current="page" href="/list">Driver</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="<c:url value="/add"/>">Add Driver</a>
+          <a class="nav-link active" aria-current="page" href="/cabs">Cab</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/cabs">Cab List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="<c:url value="/cab"/>">Add Cab</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="<c:url value="/driverlist"/>">Driver</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="<c:url value="/cab"/>">Cab</a>
+          <a class="nav-link active" href="<c:url value="/cablist"/>">Assign Drivers</a>
         </li>
       </ul>
     </div>

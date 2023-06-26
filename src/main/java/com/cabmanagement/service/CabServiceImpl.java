@@ -6,9 +6,11 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.cabmanagement.entites.Cab;
+import com.cabmanagement.entites.Driver;
 import com.cabmanagement.exception.DuplicateRecordException;
 import com.cabmanagement.exception.RecordNotFoundException;
 import com.cabmanagement.repository.CabRepository;
+import com.cabmanagement.repository.DriverRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,6 +19,8 @@ import lombok.RequiredArgsConstructor;
 public class CabServiceImpl implements CabService {
 	
 	private final CabRepository cabRepository;
+	
+	private final DriverRepository driverRepository;
 
 	@Override
 	public void add(Cab cab) throws DuplicateRecordException {
@@ -52,6 +56,16 @@ public class CabServiceImpl implements CabService {
 	@Override
 	public List<Cab> getAllCab() {
 		return cabRepository.findAll();
+	}
+	
+	@Override
+	public void assignDriversToCab(Long driverId, Long cabId) {
+		Cab cab = cabRepository.findById(cabId).get();
+		Driver driver = driverRepository.findById(driverId).get();		
+		cab.setDriverId(driverId);
+		cab.setDriver(driver);
+		cabRepository.save(cab);		
+		
 	}
 
 }

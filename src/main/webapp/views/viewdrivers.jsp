@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%@include file="header.jsp"%>
-	<h1 class="text-center fw-bold">Driver</h1>
+	<h1 class="text-center fw-bold">Assigned Drivers</h1>
 	<sf:form method="post" action="/add" modelAttribute="driver">
 	<div class="container">
 	<c:if test="${success!=null}">
@@ -29,7 +29,6 @@
 				<th>Driver Name</th>
 				<th>Driver Email</th>
 				<th>Phone No</th>
-				<th>Action</th>
 			</tr>
 		</thead>	
 			<tbody>
@@ -40,11 +39,6 @@
 						<td>${d.driverName}</td>
 						<td>${d.email}</td>
 						<td>${d.phoneNo}</td>
-						<td>
-							<a href="/driver?id=${d.id}" class="btn btn-warning fw-bold text-dark">Update</a>
-							<a href="/list?id=${d.id}" class="btn btn-danger fw-bold text-dark">Delete</a>
-							<a href="/viewcabslist?id=${d.id}" class="btn btn-secondary fw-bold text-dark">View Cabs</a>
-						</td>
 						</tr>
 					</c:forEach>
 					
