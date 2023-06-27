@@ -39,8 +39,8 @@
 						<td>${c.cabModel}</td>
 						<td>${c.cabColour}</td>
 						<td>
-							<a href="/assign?id=${c.id}" class="btn btn-warning fw-bold text-dark">Assign Drivers</a>
-							<a href="/view/drivers?id=${c.id}" class="btn btn-danger fw-bold text-dark">View Drivers</a>
+							<a href="/assign?id=${c.id}" class="btn btn-warning fw-bold text-dark">Assign Driver</a>
+							<a href="/view/drivers?id=${c.id}" class="btn btn-danger fw-bold text-dark">View Driver</a>
 						</td>
 						</tr>
 					</c:forEach>
